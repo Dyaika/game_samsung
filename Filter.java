@@ -36,16 +36,16 @@ public class Filter {
     public Filter(int stateOfSubstance, int color) {
         switch (stateOfSubstance) {
             case 0:
-                stSubstance = "vapor";
+                stSubstance = "газообразное";
                 break;
             case 1:
-                stSubstance = "fluid";
+                stSubstance = " жидкость ";
                 break;
             case 2:
-                stSubstance = "solid";
+                stSubstance = " твердое ";
                 break;
             case 3:
-                stSubstance = "crushed";
+                stSubstance = "измельченное";
                 break;
             default:
                 stSubstance = "none";
@@ -88,7 +88,7 @@ public class Filter {
                 return  ANSI_YELLOW + stSubstance + ANSI_RESET;
                 //break;
             default:
-                return "      ";
+                return "          ";
         }
     }
 }

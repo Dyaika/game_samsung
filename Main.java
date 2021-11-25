@@ -15,11 +15,11 @@ public class Main {
         lastRow[2] = arr[0][2];
         lastRow[3] = arr[0][3];//чтобы мы могли "видеть" что в дырах
         for (int i = 1; i < height; i++){
-            int right = (int)Math.round(Math.random()) % 2;//0 дырка слева 1 справа
+            int right = (int)Math.round(Math.random());//0 дырка слева 1 справа
             if (right == 1){
                 for (int j = 0; j < 3; j++){
-                    int diff = (int)Math.round(Math.random() * 10) % 2;//0 совпадет состояние, 1 совпадет цвет
-                    int state = (int)Math.round(Math.random() * 10) % 4;
+                    int diff = (int)Math.round(Math.random());//0 совпадет состояние, 1 совпадет цвет
+                    int state = (int)Math.round(Math.random() * 3);
                     if (diff == 0){
                         arr[i][j] = new Filter(lastRow[j].getSub(), state);
                         lastRow[j] = arr[i][j];
@@ -31,8 +31,8 @@ public class Main {
                 arr[i][3] = new Filter(4, 4);//дыра
             } else {
                 for (int j = 1; j < 4; j++){
-                    int diff = (int)Math.round(Math.random() * 10) % 2;//0 совпадет состояние, 1 совпадет цвет
-                    int state = (int)Math.round(Math.random() * 10) % 4;
+                    int diff = (int)Math.round(Math.random());//0 совпадет состояние, 1 совпадет цвет
+                    int state = (int)Math.round(Math.random() * 3);
                     if (diff == 0){
                         arr[i][j] = new Filter(lastRow[j].getSub(), state);
                         lastRow[j] = arr[i][j];
@@ -47,7 +47,7 @@ public class Main {
         }
         for (int i = height - 1; i > -1; i--){
             for (int j = 0; j < 4; j++){
-                System.out.print(arr[i][j] + "    ");
+                System.out.print(arr[i][j] + "         ");
             }
             System.out.println("");
         }
